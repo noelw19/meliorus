@@ -9,9 +9,15 @@ function App() {
           <p className='text-left pl-4'>[ me·​lio·​rism ]</p>
           <p className='text-left pl-4 pt-4'>:the idea that progress is a real concept and that humans can interfere with natural processes in order to improve the world</p>
         </div>
+        <div className='w-full md:w-[60%] flex justify-start md:justify-center items-center py-8 flex-col'>
+          <p className='text-2xl mt-4 font-medium'>Software built with a purpose in mind</p>
+          <p>let it and let god</p>
+        </div>
       </div>
-      <div className='px-4'>
-        <p className='text-lg mt-4'>A place where I build small software that serves a purpose</p>
+      <div className='w-full p-8 flex justify-center'>
+        <div className='w-[80%] py-6 border-2 border-black px-6 m-1 bg-white'>
+          <p>List of Software</p>  
+        </div>
       </div>
     </div>
   );
