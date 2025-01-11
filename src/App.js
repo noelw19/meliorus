@@ -12,7 +12,8 @@ function App() {
         </div>
         <div className='w-full md:w-[60%] flex justify-start md:justify-center items-center py-8 flex-col'>
           <p className='text-2xl mt-4 font-medium'>Software built with a purpose in mind</p>
-          <p>let it and let god</p>
+          <p>Imagination is everything. It is the preview of life’s coming attractions.</p>
+          <p>– Albert Einstein</p>
         </div>
       </div>
       <div className='w-full p-8 flex items-center flex-col'>
