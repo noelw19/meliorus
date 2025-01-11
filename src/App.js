@@ -20,7 +20,9 @@ function App() {
           <p>List of Software</p>  
         </div>
           <div className='pt-8 flex flex-wrap gap-4'>
-            <div className='bg-white p-4 border-2 border-black'>
+            <div className='bg-white p-4 border-2 border-black cursor-pointer hover:border-green-500 hover:rounded' onClick={() => {
+              window.open("https://a-lo.netlify.app", "_blank")
+            }}>
               <img className='w-[400px]' src={img} alt='aef' />
               <p>A-LO</p>
               <p></p>
