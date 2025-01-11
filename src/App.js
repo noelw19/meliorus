@@ -1,4 +1,5 @@
 import './App.css';
+import img from "./images/alo.png"
 
 function App() {
   return (
@@ -14,10 +15,17 @@ function App() {
           <p>let it and let god</p>
         </div>
       </div>
-      <div className='w-full p-8 flex justify-center'>
+      <div className='w-full p-8 flex items-center flex-col'>
         <div className='w-[80%] py-6 border-2 border-black px-6 m-1 bg-white'>
           <p>List of Software</p>  
         </div>
+          <div className='pt-8 flex flex-wrap gap-4'>
+            <div className='bg-white p-4 border-2 border-black'>
+              <img className='w-[400px]' src={img} alt='aef' />
+              <p>A-LO</p>
+              <p></p>
+            </div>
+          </div>
       </div>
     </div>
   );
