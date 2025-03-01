@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <div className='w-full flex gap-8 p-2'>
         {/* left container */}
-        <div className='w-[55%] md:w-[35%] h-[98vh] pt-16 pl-8 flex items-left flex-col justify-between'>
+        <div className='w-[55%] md:w-[35%] h-[98vh] pt-8 md:pt-16 md:pl-8 flex items-left flex-col justify-between'>
 
           <div>
             <div className="avatar w-full flex justify-left">
@@ -51,7 +51,7 @@ function App() {
             <p className='text-left'></p>
           </div>
 
-          <div className='pt-4  my-8 text-sm'>
+          <div className='pt-4 my-8 text-sm'>
             <p className='text-left text-sm md:text-base'><span className='text-xl'>Meliorus</span> <br /> <span className='text-md py-6'>Taken from Meliorism</span> <span className='text-gray-500 text-md'> noun</span></p>
             <p className='text-left text-sm md:text-base'>[ me·​lio·​rism ]</p>
             <p className='text-left pt-4 p-2 text-sm md:text-base'>:the idea that progress is a real concept and that humans can interfere with natural processes in order to improve the world</p>
