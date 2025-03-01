@@ -14,7 +14,7 @@ export function Card({img, title, description, click, unfinished=false}) {
               <h2 className="font-bold text-md md:text-lg">{title}</h2>
               <p className="text-sm md:text-md">{description}</p>
               {unfinished && <div>
-                <p className="text-red-500 absolute text-2xl font-bold bottom-20  bg-white p-2 rounded"><FontAwesomeIcon icon={faPersonDigging}/> UNDER CONSTRUCTION</p>
+                <p className="text-red-500 absolute md:text-2xl font-bold bottom-20 bg-white p-2 rounded"><FontAwesomeIcon icon={faPersonDigging}/> UNDER CONSTRUCTION</p>
                 </div>
                 }
             </div>
