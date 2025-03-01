@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPersonDigging } from '@fortawesome/free-solid-svg-icons'
 
 export function Card({img, title, description, click, unfinished=false}) {
     return (
@@ -11,7 +13,10 @@ export function Card({img, title, description, click, unfinished=false}) {
             <div className="card-body">
               <h2 className="font-bold text-md md:text-lg">{title}</h2>
               <p className="text-sm md:text-md">{description}</p>
-              {unfinished && <p className="text-red-500">UNDER CONSTRUCTION</p>}
+              {unfinished && <div>
+                <p className="text-red-500 absolute text-2xl font-bold bottom-20  bg-white p-2 rounded"><FontAwesomeIcon icon={faPersonDigging}/> UNDER CONSTRUCTION</p>
+                </div>
+                }
             </div>
           </div>
     )
