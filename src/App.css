@@ -1,6 +1,10 @@
 :root {
-  --background: #F2EBE3;
+  --background: #eee6e6;
   --cardbg: #FDFFFC;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 .App {
@@ -9,6 +13,9 @@
   height: 100vh;
   background-color: var(--background);
   overflow-y: scroll;
+  overflow-x: hidden;
+  color: black;
+  box-sizing: border-box;
 }
 
 .App-logo {
