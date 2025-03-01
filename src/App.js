@@ -11,7 +11,7 @@ import { Card } from './components/Card';
 function App() {
   return (
     <div className="App">
-      <div className='w-full flex gap-8 p-2'>
+      <div className='w-full flex gap-2 md:gap-8 p-2'>
         {/* left container */}
         <div className='w-[55%] md:w-[35%] h-[98vh] pt-8 md:pt-16 md:pl-8 flex items-left flex-col justify-between'>
 
