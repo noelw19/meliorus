@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <div className='w-full flex gap-1 flex-col md:flex-row md:gap-8 p-2'>
         {/* left container */}
-        <div className='w-[100%] md:w-[35%] h-fit md:h-[98vh] pt-8 md:pt-16 md:pl-8 flex items-center md:items-left flex-col md:justify-between'>
+        <div className='w-[100%] md:w-[35%] h-fit md:h-[98vh] pt-8 md:pt-16 md:pl-8 flex items-center md:items-left flex-col md:justify-between justify-start'>
 
           <div className='w-full flex items-center justify-evenly gap-2 md:block'>
 
@@ -52,8 +52,8 @@ function App() {
             <p className='text-left'></p>
           </div>
 
-          <div className='w-full pt-4 pl-4 my-8 text-sm md:p-0'>
-            <p className='text-left text-base'><span className='text-xl'>Meliorus</span> <br /> <span className='text-md py-6'>Taken from Meliorism</span> <span className='text-gray-500 text-md'> noun</span></p>
+          <div className='w-full pt-4 pl-4 md:my-8 text-sm md:p-0'>
+            <p className='text-left text-base'><span className='text-xl'>Meliorus</span> <br /> <span className='text-md'>Taken from Meliorism</span> <span className='text-gray-500 text-md'> noun</span></p>
             <p className='text-left text-base'>[ me·​lio·​rism ]</p>
             <p className='text-left pt-4 p-2 text-base'>:the idea that progress is a real concept and that humans can interfere with natural processes in order to improve the world</p>
           </div>
