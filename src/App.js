@@ -64,8 +64,8 @@ function App() {
         {/* right container */}
         <div className='w-full h-fit md:h-[98vh] pt-0 md:pt-14 pr-2 flex flex-row flex-wrap justify-evenly '>
           <Card img={alo} title={"A Loved One (Alo)"} description={"A Place to store your loved ones memory"} click={() => { window.open("https://alo.meliorus.co.nz", "_blank") }} />
+          <Card img={docbot} title={"DocBot"} description={"AI Rag application. Upload a book and ask questions about the content."} click={() => { window.open("https://rag.meliorus.co.nz", "_blank") }} />
           <Card img={tempus} title={"Tempus"} unfinished description={"Booking Management for tattooists"} click={() => { window.open("https://tempus.meliorus.co.nz", "_blank") }} />
-          <Card img={docbot} title={"DocBot"} unfinished description={"AI Rag application. Upload a book and ask questions about the content."} click={() => { window.open("https://rag.meliorus.co.nz", "_blank") }} />
 
         </div>
       </div>
