@@ -3,6 +3,7 @@ import alo from "./images/alo.png"
 import tempus from "./images/tempus.png"
 import profile from "./images/selfie.png"
 import docbot from "./images/docbot.png"
+import pottery from "./images/pottery.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
@@ -66,6 +67,7 @@ function App() {
           <Card img={alo} title={"A Loved One (Alo)"} description={"A Place to store your loved ones memory"} click={() => { window.open("https://alo.meliorus.co.nz", "_blank") }} />
           <Card img={docbot} title={"DocBot"} description={"AI Rag application. Upload a book and ask questions about the content."} click={() => { window.open("https://rag.meliorus.co.nz", "_blank") }} />
           <Card img={tempus} title={"Tempus"} unfinished description={"Booking Management for tattooists"} click={() => { window.open("https://tempus.meliorus.co.nz", "_blank") }} />
+          <Card img={pottery} title={"Pottery"} unfinished description={"Deploys multiple honeypot instances on your server, with options to connect securely to a parent instance via MTLS "} click={() => { window.open("https://https://github.com/noelw19/Pottery", "_blank") }} />
 
         </div>
       </div>
