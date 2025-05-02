@@ -8,21 +8,68 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { Card } from './components/Card';
-
-
+import { useEffect, useMemo, useState } from 'react';
 
 function App() {
+  const [viewInfo, setViewInfo] = useState(false)
+
+  let projects = useMemo(() => {
+    return [
+      {
+        id: 1,
+        img: alo,
+        title: "A Loved One (Alo)",
+        description: "A Place to store your loved ones memory",
+        link: "https://alo.meliorus.co.nz"
+      },
+      {
+        id: 2,
+        img: docbot,
+        title: "DocBot",
+        description: "AI Rag application. Upload a book and ask questions about the content.",
+        link: "https://rag.meliorus.co.nz"
+      },
+      {
+        id: 3,
+        img: tempus,
+        title: "Tempus",
+        unfinished: true,
+        description: "Booking Management for tattooists",
+        link: "https://tempus.meliorus.co.nz"
+      },
+      {
+        id: 4,
+        img: pottery,
+        title: "Pottery",
+        description: "Deploys multiple honeypot instances on your server, with options to connect securely to a parent instance via MTLS ",
+        link: "https://github.com/noelw19/Pottery"
+      }
+    ]
+  }, [])
+
+  useEffect(() => {
+    let param = window.location.href.split("?")[1]
+    let view = decodeURI(param).split("=")[1]
+    console.log(view)
+    if (view) {
+      setViewInfo(projects.filter(p => p.id === Number(view))[0])
+
+    }
+  }, [projects])
+
+
+
   return (
     <div className="App">
       <div className='w-full flex gap-1 flex-col md:flex-row md:gap-8 p-2'>
         {/* left container */}
-        <div className='w-[100%] md:w-[35%] h-fit md:h-[98vh] pt-8 md:pt-16 md:pl-8 flex items-center md:items-left flex-col md:justify-between justify-start'>
+        <div className='w-[100%] md:w-[45%] h-fit md:h-[98vh] pt-8 md:pt-16 md:pl-8 flex items-center md:items-left flex-col md:justify-between justify-start'>
 
           <div className='w-full flex items-center justify-evenly gap-2 md:block'>
 
             <div className="avatar w-[150px] md:w-[250px] h-[150px] md:h-[250px] flex justify-left">
               <div className="w-full md:w-[100%] rounded-full border-4 border-white">
-                <img src={profile} />
+                <img src={profile} alt="portrait of portfolio creator" />
               </div>
             </div>
 
@@ -63,12 +110,28 @@ function App() {
         </div>
 
         {/* right container */}
-        <div className='w-full h-fit md:h-[98vh] pt-0 md:pt-14 pr-2 flex flex-row flex-wrap justify-evenly '>
-          <Card img={alo} title={"A Loved One (Alo)"} description={"A Place to store your loved ones memory"} click={() => { window.open("https://alo.meliorus.co.nz", "_blank") }} />
-          <Card img={docbot} title={"DocBot"} description={"AI Rag application. Upload a book and ask questions about the content."} click={() => { window.open("https://rag.meliorus.co.nz", "_blank") }} />
-          <Card img={tempus} title={"Tempus"} unfinished description={"Booking Management for tattooists"} click={() => { window.open("https://tempus.meliorus.co.nz", "_blank") }} />
-          <Card img={pottery} title={"Pottery"} description={"Deploys multiple honeypot instances on your server, with options to connect securely to a parent instance via MTLS "} click={() => { window.open("https://github.com/noelw19/Pottery", "_blank") }} />
-
+        <div className='w-full h-[90%] md:h-[98vh] pt-0 md:pt-14 pr-2 flex flex-row flex-wrap justify-evenly '>
+          {!viewInfo ? projects.map((proj) => {
+            return (
+              <Card key={proj.title} num={proj.id} unfinished={proj.unfinished} img={proj.img} title={proj.title} description={proj.description} link={proj.link} />
+            )
+          }) : <div className=''>
+            <div className=' pl-4 flex justify-start'>
+              <button className='p-2 border-2 border-black rounded-lg hover:bg-black hover:text-white' onClick={() => window.location.href = window.location.origin}>Back</button>
+            </div>
+            <div className='card card-compact w-fit h-fill shadow-xl bg-white  m-4 overflow-scroll'>
+              {viewInfo.unfinished && <p className='mt-10 text-red-500 text-bold'>This project is still a work in progress.</p>}
+              <div className='p-10'>
+                <p className='text-lg'>{viewInfo.title}</p>
+                <p className='mt-10'>{viewInfo.description}</p>
+                <img
+                  className='w-fit mt-10 border-t-2 border-black'
+                  src={viewInfo.img}
+                  alt="Shoes" />
+              </div>
+            </div>
+          </div>
+          }
         </div>
       </div>
     </div>
