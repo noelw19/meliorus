@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPersonDigging, faGlobe, faEye } from '@fortawesome/free-solid-svg-icons'
 import {faGithub} from "@fortawesome/free-brands-svg-icons"
 
-export function Card({ img, title, description, link, num, unfinished = false}) {
+export function Card({ img, identifier, title, description, link, num, unfinished = false}) {
   const [overlay, setOverlay] = useState(false)
 
   window.addEventListener("DOMContentLoaded", () => {
@@ -25,7 +25,7 @@ export function Card({ img, title, description, link, num, unfinished = false}) 
   }
 
   function infoHandle() {
-    window.location.href = window.location.origin + `?view=${num}`
+    window.location.href = window.location.origin + `?view=${identifier}`
   }
 
   return (

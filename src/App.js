@@ -19,30 +19,38 @@ function App() {
         id: 1,
         img: alo,
         title: "A Loved One (Alo)",
-        description: "A Place to store your loved ones memory",
-        link: "https://alo.meliorus.co.nz"
+        shortDesc: "A Place to store your loved ones memory",
+        description:"An app to store information about loved ones that have passed, includes QR code that can be placed on gravestone and points to the individuals digital resting point.",
+        link: "https://alo.meliorus.co.nz",
+        identifier: "Alo"
       },
       {
         id: 2,
         img: docbot,
         title: "DocBot",
-        description: "AI Rag application. Upload a book and ask questions about the content.",
-        link: "https://rag.meliorus.co.nz"
+        shortDesc:"AI Rag Application to upload documents and query the AI about these documents.",
+        description: "AI Retrieval Augmented Generation application. Create an account and upload multiple documents, choose a document to chat about and ask questions regarding the document.",
+        link: "https://rag.meliorus.co.nz",
+        identifier: "DocBot"
       },
       {
         id: 3,
         img: tempus,
         title: "Tempus",
         unfinished: true,
-        description: "Booking Management for tattooists",
-        link: "https://tempus.meliorus.co.nz"
+        shortDesc:"Booking Management for tattoists or personal trainers",
+        description: "Booking Management for tattooists, create an account and set default config, allow users to scan a QR code to take them to your create a booking page and let them choose a booking time that suits them by checking against the tattoists schedule, includes messaging, initial questions and sending images.",
+        link: "https://tempus.meliorus.co.nz",
+        identifier: "Tempus"
       },
       {
         id: 4,
         img: pottery,
         title: "Pottery",
+        shortDesc:"Honey pot instance application to allow monitoring of requests sent by scanners that may be hitting your open ports.",
         description: "Deploys multiple honeypot instances on your server, with options to connect securely to a parent instance via MTLS ",
-        link: "https://github.com/noelw19/Pottery"
+        link: "https://github.com/noelw19/Pottery",
+        identifier: "Pottery"
       }
     ]
   }, [])
@@ -52,7 +60,7 @@ function App() {
     let view = decodeURI(param).split("=")[1]
     console.log(view)
     if (view) {
-      setViewInfo(projects.filter(p => p.id === Number(view))[0])
+      setViewInfo(projects.filter(p => p.identifier === view)[0])
 
     }
   }, [projects])
@@ -61,7 +69,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='w-full flex gap-1 flex-col md:flex-row md:gap-8 p-2'>
+      <div className='w-full flex gap-1 flex-col md:flex-row md:gap-8 p-2 overflow-hidden'>
         {/* left container */}
         <div className='w-[100%] md:w-[45%] h-fit md:h-[98vh] pt-8 md:pt-16 md:pl-8 flex items-center md:items-left flex-col md:justify-between justify-start'>
 
@@ -102,7 +110,7 @@ function App() {
             <p className='text-left'></p>
           </div>
 
-          <div className='w-full pt-4 pl-4 md:my-8 text-sm md:p-0'>
+          <div className='w-full pt-4 pl-4 md:my-8 text-sm md:p-0 md:border-none sm:border-b-2 sm:border-black sm:pb-2 sm:mb-2 '>
             <p className='text-left text-base'><span className='text-xl'>Meliorus</span> <br /> <span className='text-md'>Taken from Meliorism</span> <span className='text-gray-500 text-md'> noun</span></p>
             <p className='text-left text-base'>[ me·​lio·​rism ]</p>
             <p className='text-left pt-4 p-2 text-base'>:the idea that progress is a real concept and that humans can interfere with natural processes in order to improve the world</p>
@@ -113,16 +121,16 @@ function App() {
         <div className='w-full h-[90%] md:h-[98vh] pt-0 md:pt-14 pr-2 flex flex-row flex-wrap justify-evenly '>
           {!viewInfo ? projects.map((proj) => {
             return (
-              <Card key={proj.title} num={proj.id} unfinished={proj.unfinished} img={proj.img} title={proj.title} description={proj.description} link={proj.link} />
+              <Card key={proj.title} identifier={proj.identifier} num={proj.id} unfinished={proj.unfinished} img={proj.img} title={proj.title} description={proj.shortDesc} link={proj.link} />
             )
           }) : <div className=''>
             <div className=' pl-4 flex justify-start'>
               <button className='p-2 border-2 border-black rounded-lg hover:bg-black hover:text-white' onClick={() => window.location.href = window.location.origin}>Back</button>
             </div>
-            <div className='card card-compact w-fit h-fill shadow-xl bg-white  m-4 overflow-scroll'>
+            <div className='card card-compact w-fit h-fill shadow-xl bg-white  m-4 overflow-scroll h-[80%]'>
               {viewInfo.unfinished && <p className='mt-10 text-red-500 text-bold'>This project is still a work in progress.</p>}
               <div className='p-10'>
-                <p className='text-lg'>{viewInfo.title}</p>
+                <p className='text-lg font-bold'>{viewInfo.title}</p>
                 <p className='mt-10'>{viewInfo.description}</p>
                 <img
                   className='w-fit mt-10 border-t-2 border-black'
