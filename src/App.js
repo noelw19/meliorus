@@ -118,7 +118,7 @@ function App() {
         </div>
 
         {/* right container */}
-        <div className='w-full h-[90%] md:h-[98vh] pt-0 md:pt-14 pr-2 flex flex-row flex-wrap justify-evenly '>
+        <div className='w-full h-[90%] md:h-[98vh] pt-0 md:pt-14 pr-2 flex flex-row flex-wrap justify-evenly overflow-scroll'>
           {!viewInfo ? projects.map((proj) => {
             return (
               <Card key={proj.title} identifier={proj.identifier} num={proj.id} unfinished={proj.unfinished} img={proj.img} title={proj.title} description={proj.shortDesc} link={proj.link} />

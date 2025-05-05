@@ -29,7 +29,7 @@ export function Card({ img, identifier, title, description, link, num, unfinishe
   }
 
   return (
-    <div className={`card-${num} card card-compact w-[80%] md:w-[35%] h-fit shadow-xl bg-white  m-4 hover:translate-y-2`}>
+    <div className={`card-${num} card card-compact w-[80%] lg:w-[35%] h-fit shadow-xl bg-white m-4 hover:translate-y-2`}>
       <div className={`rounded-lg `}>
         <figure>
           <img
@@ -47,7 +47,7 @@ export function Card({ img, identifier, title, description, link, num, unfinishe
       </div>
       {overlay && <div className=" z-10 absolute w-full h-full bg-black opacity-70 rounded-lg">
         </div>}
-        {(overlay && unfinished) && <p className=" z-10 absolute rounded-lg text-white w-full flex justify-center mt-5"> Under Construction
+        {(overlay && unfinished) && <p className=" z-10 absolute top-[35%] text-black w-full flex justify-center mt-5 bg-red-500"> <span className="bg-white px-2">Under Construction</span>
           </p>}
       {overlay && <div className="absolute z-40 bottom-10 w-full text-white flex gap-4 justify-center">
           <button onClick={viewHandle} className="rounded-lg bg-white text-black hover:text-white hover:bg-black hover:cursor-pointer p-2 w-[100px]"><FontAwesomeIcon icon={link.includes("github") ? faGithub : faGlobe} /> {link.includes("github") ? "Code" : "Website"}</button>
