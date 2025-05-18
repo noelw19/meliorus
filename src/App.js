@@ -4,6 +4,7 @@ import tempus from "./images/tempus.png"
 import profile from "./images/selfie.png"
 import docbot from "./images/docbot.png"
 import pottery from "./images/pottery.png"
+import dct from "./images/dct1.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
@@ -35,13 +36,12 @@ function App() {
       },
       {
         id: 3,
-        img: tempus,
-        title: "Tempus",
-        unfinished: true,
-        shortDesc:"Booking Management for tattoists or personal trainers",
-        description: "Booking Management for tattooists, create an account and set default config, allow users to scan a QR code to take them to your create a booking page and let them choose a booking time that suits them by checking against the tattoists schedule, includes messaging, initial questions and sending images.",
-        link: "https://tempus.meliorus.co.nz",
-        identifier: "Tempus"
+        img: dct,
+        title: "Digital Certificate Tool",
+        shortDesc:"Tool to create certificates, csr's and to decode pem files.",
+        description: "A tool that allows you to create CA certificates, and subordinate certificates with provided CA certificates and key, including DNS sans, key usages and extended key usages. This small app also has the ability to create CSR's and decode pem files whether they are uploaded or pasted into the GUI. This is built using ReactJS and WASM with golang.",
+        link: "https://dct.meliorus.co.nz",
+        identifier: "DCT"
       },
       {
         id: 4,
@@ -58,7 +58,6 @@ function App() {
   useEffect(() => {
     let param = window.location.href.split("?")[1]
     let view = decodeURI(param).split("=")[1]
-    console.log(view)
     if (view) {
       setViewInfo(projects.filter(p => p.identifier === view)[0])
 
@@ -105,8 +104,8 @@ function App() {
           </div>
 
           <div className='w-full pt-8 pl-4 md:p-0'>
+            <p className='text-left text-base'>I enjoy building software about things I am interested in.</p>
             <p className='text-left text-base'>I want to build software with utility.</p>
-            <p className='text-left text-base'>Software that helps.</p>
             <p className='text-left'></p>
           </div>
 

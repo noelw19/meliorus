@@ -10,12 +10,10 @@ export function Card({ img, identifier, title, description, link, num, unfinishe
     let cardEl = document.querySelector(`.card-${num}`);
 
     cardEl.addEventListener("mouseenter", () => {
-      console.log(title)
       setOverlay(true)
     })
 
     cardEl.addEventListener("mouseleave", () => {
-      console.log(title, " leave")
       setOverlay(false)
     })
   })
