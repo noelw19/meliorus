@@ -131,7 +131,7 @@ function App() {
     <div className="App">
       <div className='w-full flex gap-1 flex-col md:flex-row md:gap-8 p-2 overflow-hidden'>
         {/* left container */}
-        {viewInfo ? <div className='w-[100%] md:w-[45%] h-fit md:h-[98vh] pt-8 md:pt-16 md:pl-8 flex items-center md:items-left flex-col md:justify-between justify-start'>
+        {!viewInfo ? <div className='w-[100%] md:w-[45%] h-fit md:h-[98vh] pt-8 md:pt-16 md:pl-8 flex items-center md:items-left flex-col md:justify-between justify-start'>
 
           <div className='w-full flex items-center justify-evenly gap-2 md:block'>
 
