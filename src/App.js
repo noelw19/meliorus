@@ -4,6 +4,7 @@ import tempus from "./images/tempus.png"
 import profile from "./images/selfie.png"
 import docbot from "./images/docbot.png"
 import pottery from "./images/pottery.png"
+import minotaur from "./images/minotaur.png"
 import dct from "./images/dct1.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -24,6 +25,29 @@ function App() {
         description:"An app to store information about loved ones that have passed, includes QR code that can be placed on gravestone and points to the individuals digital resting point.",
         link: "https://alo.meliorus.co.nz",
         identifier: "Alo"
+      },
+      {
+        id: 5,
+        img: minotaur,
+        title: "Minotaur",
+        shortDesc:"Minotaur is a lightweight command-line tool for managing multiple servers. It lets you connect to servers via SSH, copy files to one or many machines using tags, and manage environments through simple JSON configs—all in one streamlined workflow powered by tmux.",
+        description: `Minotaur is a command-line tool designed to streamline multi-server management and file deployment, built for developers and system administrators who need to manage multiple machines efficiently. Traditional tools like RDM and WinSCP can be slow and cumbersome when handling many servers, requiring repeated logins, file transfers, and context switching. Minotaur solves this by combining SSH access, file copying, and environment management into a single, cohesive workflow.
+<br/>With Minotaur, you can:
+<br/>- Connect to multiple servers simultaneously using tags and tmux, allowing parallel operations across machines.
+
+- Copy single files, directories, or multiple items at once to many servers with a simple command.
+
+- Define multiple environments (e.g., development, pre-production, production) with separate JSON configuration files.
+
+- Use SSH key authentication for secure, passwordless logins, with the option to override usernames on a per-server basis.
+
+- Quickly access servers by IP address or by the custom name you assign in your config, reducing the need to remember multiple credentials.
+
+<br/>Minotaur is ideal for teams or individuals managing multiple servers, deploying updates, or performing batch administrative tasks. By leveraging tmux sessions, it keeps all connections organized in one terminal window and allows you to terminate sessions easily without typing exit repeatedly.
+
+Whether you’re copying files, deploying builds, or performing maintenance across environments, Minotaur simplifies repetitive server tasks, saves time, and reduces the chance of human error.`,
+        link: "https://github.com/noelw19/minotaur",
+        identifier: "Minotaur"
       },
       {
         id: 2,
@@ -51,7 +75,7 @@ function App() {
         description: "Deploys multiple honeypot instances on your server, with options to connect securely to a parent instance via MTLS ",
         link: "https://github.com/noelw19/Pottery",
         identifier: "Pottery"
-      }
+      },
     ]
   }, [])
 
@@ -65,6 +89,44 @@ function App() {
   }, [projects])
 
 
+  function showAll() {
+    return (
+      <div className='w-full h-[80%] md:h-[90vh] pt-0 md:pt-14 pr-2 flex flex-row flex-wrap justify-evenly overflow-scroll pb-4'>
+        {projects.map((proj) => {
+          return (
+            <Card key={proj.title} identifier={proj.identifier} num={proj.id} unfinished={proj.unfinished} img={proj.img} title={proj.title} description={proj.shortDesc} link={proj.link} />
+          )
+        })}
+      </div>)
+  }
+
+  function showSelected() {
+    return (
+      <div className=' card bg-white p-4 h-full shadow-xl'>
+        <div className=' pl-4 flex justify-start'>
+          <button className='p-2 border-2 border-black rounded-lg hover:bg-black hover:text-white' onClick={() => window.location.href = window.location.origin}>Back</button>
+        </div>
+        <div className='  w-fit h-[90%]  m-4 overflow-scroll h-[80%]'>
+          {viewInfo.unfinished && <p className='mt-10 text-red-500 text-bold'>This project is still a work in progress.</p>}
+          <div className='p-10'>
+            <p className='text-lg font-bold'>{viewInfo.title}</p>
+
+            {viewInfo.description.split("\n").map(paragraph => {
+              if (paragraph.includes("<br/>")) {
+                const newP = paragraph.replace("<br/>", "")
+                return <p className='text-left mt-4'>{newP}</p>
+              }
+              return <p className='text-left'>{paragraph}</p>
+            })}
+            <img
+              className='w-fit mt-10 border-t-2 border-black'
+              src={viewInfo.img}
+              alt="Shoes" />
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="App">
@@ -117,28 +179,8 @@ function App() {
         </div>
 
         {/* right container */}
-        <div className='w-full h-[90%] md:h-[98vh] pt-0 md:pt-14 pr-2 flex flex-row flex-wrap justify-evenly overflow-scroll'>
-          {!viewInfo ? projects.map((proj) => {
-            return (
-              <Card key={proj.title} identifier={proj.identifier} num={proj.id} unfinished={proj.unfinished} img={proj.img} title={proj.title} description={proj.shortDesc} link={proj.link} />
-            )
-          }) : <div className=''>
-            <div className=' pl-4 flex justify-start'>
-              <button className='p-2 border-2 border-black rounded-lg hover:bg-black hover:text-white' onClick={() => window.location.href = window.location.origin}>Back</button>
-            </div>
-            <div className='card card-compact w-fit h-fill shadow-xl bg-white  m-4 overflow-scroll h-[80%]'>
-              {viewInfo.unfinished && <p className='mt-10 text-red-500 text-bold'>This project is still a work in progress.</p>}
-              <div className='p-10'>
-                <p className='text-lg font-bold'>{viewInfo.title}</p>
-                <p className='mt-10'>{viewInfo.description}</p>
-                <img
-                  className='w-fit mt-10 border-t-2 border-black'
-                  src={viewInfo.img}
-                  alt="Shoes" />
-              </div>
-            </div>
-          </div>
-          }
+        <div className='w-full h-[90%] md:h-[98vh] pt-0 md:pt-14 pr-2 flex flex-row flex-wrap justify-evenly overflow-none'>
+          {!viewInfo ? showAll() : showSelected()}
         </div>
       </div>
     </div>

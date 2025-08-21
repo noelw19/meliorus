@@ -27,7 +27,7 @@ export function Card({ img, identifier, title, description, link, num, unfinishe
   }
 
   return (
-    <div className={`card-${num} card card-compact w-[80%] lg:w-[35%] h-fit shadow-xl bg-white m-4 hover:translate-y-2`}>
+    <div className={`card-${num} card card-compact min-w-[25%] max-w-[30%] shadow-xl bg-white m-4 hover:translate-y-2 cursor-pointer`} onClick={infoHandle}>
       <div className={`rounded-lg `}>
         <figure>
           <img
