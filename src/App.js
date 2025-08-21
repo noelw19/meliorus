@@ -43,9 +43,7 @@ function App() {
 
 - Quickly access servers by IP address or by the custom name you assign in your config, reducing the need to remember multiple credentials.
 
-<br/>Minotaur is ideal for teams or individuals managing multiple servers, deploying updates, or performing batch administrative tasks. By leveraging tmux sessions, it keeps all connections organized in one terminal window and allows you to terminate sessions easily without typing exit repeatedly.
-
-Whether you’re copying files, deploying builds, or performing maintenance across environments, Minotaur simplifies repetitive server tasks, saves time, and reduces the chance of human error.`,
+<br/>Minotaur is ideal for teams or individuals managing multiple servers, deploying updates, or performing batch administrative tasks. By leveraging tmux sessions, it keeps all connections organized in one terminal window.`,
         link: "https://github.com/noelw19/minotaur",
         identifier: "Minotaur"
       },
