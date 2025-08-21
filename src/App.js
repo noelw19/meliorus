@@ -131,7 +131,7 @@ function App() {
     <div className="App">
       <div className='w-full flex gap-1 flex-col md:flex-row md:gap-8 p-2 overflow-hidden'>
         {/* left container */}
-        <div className='w-[100%] md:w-[45%] h-fit md:h-[98vh] pt-8 md:pt-16 md:pl-8 flex items-center md:items-left flex-col md:justify-between justify-start'>
+        {viewInfo ? <div className='w-[100%] md:w-[45%] h-fit md:h-[98vh] pt-8 md:pt-16 md:pl-8 flex items-center md:items-left flex-col md:justify-between justify-start'>
 
           <div className='w-full flex items-center justify-evenly gap-2 md:block'>
 
@@ -175,7 +175,7 @@ function App() {
             <p className='text-left text-base'>[ me·​lio·​rism ]</p>
             <p className='text-left pt-4 p-2 text-base'>:the idea that progress is a real concept and that humans can interfere with natural processes in order to improve the world</p>
           </div>
-        </div>
+        </div> : null}
 
         {/* right container */}
         <div className='w-full h-[90%] md:h-[98vh] pt-0 md:pt-14 pr-2 flex flex-row flex-wrap justify-evenly overflow-none'>
