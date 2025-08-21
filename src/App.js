@@ -95,7 +95,8 @@ function App() {
             <Card key={proj.title} identifier={proj.identifier} num={proj.id} unfinished={proj.unfinished} img={proj.img} title={proj.title} description={proj.shortDesc} link={proj.link} />
           )
         })}
-      </div>)
+      </div>
+      )
   }
 
   function showSelected() {
