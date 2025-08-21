@@ -105,7 +105,7 @@ function App() {
         <div className=' pl-4 flex justify-start'>
           <button className='p-2 border-2 border-black rounded-lg hover:bg-black hover:text-white' onClick={() => window.location.href = window.location.origin}>Back</button>
         </div>
-        <div className='  w-fit h-[90%]  m-4 overflow-scroll h-[80%]'>
+        <div className='w-fit m-4 overflow-scroll h-[80%]'>
           {viewInfo.unfinished && <p className='mt-10 text-red-500 text-bold'>This project is still a work in progress.</p>}
           <div className='lg:p-10 p-0 text-sm lg:text-sm'>
             <p className='text-lg font-bold'>{viewInfo.title}</p>
