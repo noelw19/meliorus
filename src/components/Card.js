@@ -1,56 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPersonDigging, faGlobe, faEye } from '@fortawesome/free-solid-svg-icons'
-import {faGithub} from "@fortawesome/free-brands-svg-icons"
+import { faPersonDigging, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 export function Card({ img, identifier, title, description, link, num, unfinished = false}) {
-  const [overlay, setOverlay] = useState(false)
-
-  window.addEventListener("DOMContentLoaded", () => {
-    let cardEl = document.querySelector(`.card-${num}`);
-
-    cardEl.addEventListener("mouseenter", () => {
-      setOverlay(true)
-    })
-
-    cardEl.addEventListener("mouseleave", () => {
-      setOverlay(false)
-    })
-  })
-
-  function viewHandle() {
-    window.open(link, "_blank")
-  }
-
-  function infoHandle() {
+  function handleClick() {
     window.location.href = window.location.origin + `?view=${identifier}`
   }
 
   return (
-    <div className={`card-${num} card card-compact min-w-[25%] w-[80%] lg:w-[40%] shadow-xl bg-white m-4 hover:translate-y-2 cursor-pointer`} onClick={infoHandle}>
-      <div className={`rounded-lg `}>
-        <figure>
-          <img
-            src={img}
-            alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="font-bold text-md md:text-lg">{title}</h2>
-          <p className="text-sm md:text-md">{description}</p>
-          {unfinished && <div>
-            <p className="text-red-500 absolute md:text-2xl font-bold left-0 bottom-20 bg-white p-2 rounded"><FontAwesomeIcon icon={faPersonDigging} /></p>
+    <article 
+      className="group w-full bg-[#FFFBF8] border border-[#E8E3DD] rounded-lg overflow-hidden hover:border-[#D4CEC6] hover:shadow-sm cursor-pointer transition-all duration-300 flex flex-col"
+      onClick={handleClick}
+    >
+      {/* Image Container */}
+      <figure className="relative overflow-hidden bg-[#E8E3DD] aspect-[16/10] flex-shrink-0">
+        <img
+          src={img}
+          alt={title}
+          className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500 ease-out"
+        />
+        {unfinished && (
+          <div className="absolute top-3 left-3">
+            <span className="bg-[#FFFBF8]/95 backdrop-blur-sm text-[#C97D60] px-2.5 py-1 rounded text-xs font-medium border border-[#E8E3DD] flex items-center gap-1.5">
+              <FontAwesomeIcon icon={faPersonDigging} className="text-xs" />
+              <span>In Progress</span>
+            </span>
           </div>
-          }
+        )}
+      </figure>
+      
+      {/* Content */}
+      <div className="p-5 md:p-6 flex-1 flex flex-col">
+        <h2 className="font-light text-xl md:text-2xl text-[#2C2416] mb-2.5 leading-tight group-hover:text-[#C97D60] transition-colors duration-200">
+          {title}
+        </h2>
+        <p className="text-sm md:text-base text-[#5A5248] font-light leading-relaxed line-clamp-2 mb-4 flex-1">
+          {description}
+        </p>
+        
+        {/* View link */}
+        <div className="flex items-center gap-2 text-sm text-[#5A5248] group-hover:text-[#2C2416] transition-colors duration-200 mt-auto pt-2">
+          <span className="font-light">View details</span>
+          <FontAwesomeIcon 
+            icon={faArrowRight} 
+            className="text-xs group-hover:translate-x-1 transition-transform duration-200" 
+          />
         </div>
       </div>
-      {overlay && <div className=" z-10 absolute w-full h-full bg-black opacity-70 rounded-lg">
-        </div>}
-        {(overlay && unfinished) && <p className=" z-10 absolute top-[35%] text-black w-full flex justify-center mt-5 bg-red-500"> <span className="bg-white px-2">Under Construction</span>
-          </p>}
-      {overlay && <div className="absolute z-40 bottom-10 w-full text-white flex gap-4 justify-center">
-          <button onClick={viewHandle} className="rounded-lg bg-white text-black hover:text-white hover:bg-black hover:cursor-pointer p-2 w-[100px]"><FontAwesomeIcon icon={link.includes("github") ? faGithub : faGlobe} /> {link.includes("github") ? "Code" : "Website"}</button>
-          <button onClick={infoHandle} className="rounded-lg bg-white text-black hover:text-white hover:bg-black hover:cursor-pointer p-2 w-[100px]"><FontAwesomeIcon icon={faEye}/> Info</button>
-        </div>}
-    </div>
+    </article>
   )
 }
