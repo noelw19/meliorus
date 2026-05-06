@@ -6,8 +6,55 @@ import { ProjectsGrid } from './components/ProjectsGrid';
 import { ProjectView } from './components/ProjectView';
 import { useEffect, useState } from 'react';
 import { getAllProjects, getProjectByIdentifier } from './data/projects';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import cvImage from './images/cv.jpg'
+
 
 function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        {/* This defines a single route for the homepage */}
+        <Route path="/" element={<Meliorus />} />
+        
+        {/* Example of another single route */}
+        <Route path="/cv" element={showCV(cvImage)} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+
+export function showCV(imageSrc, onClose) {
+  return (
+    <div style={styles.overlay} onClick={onClose}>
+      <img src={imageSrc} alt="CV" style={styles.image} />
+    </div>
+  );
+}
+
+const styles = {
+  overlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100vw",
+    height: "100vh",
+    backgroundColor: "#000",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 9999,
+    cursor: "pointer",
+  },
+  image: {
+    maxWidth: "100%",
+    maxHeight: "100%",
+    objectFit: "contain", // keeps aspect ratio
+  },
+};
+
+function Meliorus() {
   const [viewInfo, setViewInfo] = useState(null);
   const projects = getAllProjects();
 
