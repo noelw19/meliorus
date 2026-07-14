@@ -113,6 +113,7 @@ function Meliorus() {
       <section 
         id="hero" 
         className="max-w-6xl mx-auto px-6 py-24 bg-slate-500" 
+        loading="lazy"
         style={{
           backgroundImage: `url(${hero})`,
           backgroundSize: "cover",

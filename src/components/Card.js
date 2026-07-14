@@ -15,6 +15,7 @@ export function Card({ img, identifier, title, description, link, num, unfinishe
       {/* Image Container */}
       <figure className="relative overflow-hidden bg-[#E8E3DD] aspect-[16/10] flex-shrink-0">
         <img
+          loading="lazy"
           src={img}
           alt={title}
           className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500 ease-out"
