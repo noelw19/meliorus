@@ -1,8 +1,7 @@
-import alo from "../images/alo.png";
-import tempus from "../images/tempus.png";
+import alo from "../images/alo_lossy.png";
 import docbot from "../images/docbot.png";
 import pottery from "../images/pottery.png";
-import minotaur from "../images/minotaur.png";
+import minotaur from "../images/minotaur_lossy.png";
 import dct from "../images/dct1.png";
 
 /**
