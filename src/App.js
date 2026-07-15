@@ -108,12 +108,12 @@ function Meliorus() {
       <BackToTop />
 
       {/* spacer for fixed navbar */}
-      <div className="h-20" />
+      {/* <div className="h-20" /> */}
 
       {/* HERO */}
       <section
         id="hero"
-        className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+        className="relative min-h-[100vh] flex items-center justify-center overflow-hidden"
       >
         {/* Loader */}
         {!heroLoaded && (
@@ -136,7 +136,7 @@ function Meliorus() {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/45"></div>
+        <div className="absolute inset-0 bg-black/5"></div>
 
         {/* Content */}
         <div
@@ -144,11 +144,14 @@ function Meliorus() {
             heroLoaded ? "opacity-100" : "opacity-0"
           }`}
         >
-          <h1 className="text-4xl md:text-6xl font-light text-white mb-6 max-w-4xl">
-            I build software for people, not systems.
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 max-w-4xl">
+            I build software for people,
+          </h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 max-w-4xl">
+            not systems.
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-300 mb-8">
+          <p className="text-xl md:text-2xl font-bold text-orange-400 mb-8">
             Engineer • Builder • DevOps • Embedded Systems
           </p>
 
@@ -159,7 +162,7 @@ function Meliorus() {
                   .getElementById("projects")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="px-5 py-2 border border-white text-white hover:border-orange-500 hover:text-orange-500 transition"
+              className="px-5 py-2 border text-xl border-white text-white hover:border-0 hover:text-black hover:bg-white transition rounded-full"
             >
               View Projects
             </button>
@@ -168,7 +171,7 @@ function Meliorus() {
               href="/cv"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2 border border-white text-white hover:border-orange-500 hover:text-orange-500 transition"
+              className="px-5 py-2 border border-white text-xl text-white hover:border-0 hover:text-black hover:bg-white transition rounded-full"
             >
               View CV
             </a>
@@ -205,7 +208,7 @@ function Meliorus() {
             <p className="text-[#5A5248] font-light leading-relaxed mb-4">
               Today I enjoy working across software, DevOps, embedded systems and IoT, choosing the tools
               that best solve the problem rather than limiting myself to one technology stack. My biggest
-              motivation is building products with genuine utility—especially ideas that can improve everyday
+              motivation is building products with genuine utility - especially ideas that can improve everyday
               life or create opportunities in developing countries.
             </p>
 
