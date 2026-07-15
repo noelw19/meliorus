@@ -79,6 +79,8 @@ function Meliorus() {
   const [heroLoaded, setHeroLoaded] = useState(false);
   const projects = getAllProjects();
 
+  
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const viewIdentifier = params.get('view');
@@ -136,7 +138,22 @@ function Meliorus() {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/5"></div>
+        {/* <div className="absolute inset-0 bg-black/45"></div> */}
+
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(
+                ellipse at center,
+                rgba(0,0,0,.65) 0%,
+                rgba(0,0,0,.00) 25%,
+                rgba(0,0,0,.00) 55%,
+                rgba(0,0,0,.00) 100%
+              )
+            `,
+          }}
+        />
 
         {/* Content */}
         <div

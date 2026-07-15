@@ -71,3 +71,19 @@ html {
     transform: rotate(360deg);
   }
 }
+
+@keyframes rippleOverlay {
+  0% {
+    background-size: 100% 100%;
+  }
+  50% {
+    background-size: 115% 115%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+.hero-overlay {
+  animation: rippleOverlay 3s ease-in-out infinite;
+}
