@@ -77,9 +77,19 @@ function BackToTop() {
 function Meliorus() {
   const [viewInfo, setViewInfo] = useState(null);
   const [heroLoaded, setHeroLoaded] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);  
+
   const projects = getAllProjects();
 
-  
+  useEffect(() => {
+    if (!heroLoaded) return;
+
+    const timer = setTimeout(() => {
+      setShowOverlay(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [heroLoaded]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -142,7 +152,7 @@ function Meliorus() {
 
         <div
           className={`absolute inset-0 ${
-            heroLoaded ? "opacity-100" : "opacity-0"
+            showOverlay ? "opacity-100" : "opacity-0"
           }`}
           style={{
             background: `
