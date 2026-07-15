@@ -110,42 +110,57 @@ function Meliorus() {
       <div className="h-20" />
 
       {/* HERO */}
-      <section 
-        id="hero" 
-        className="max-w-6xl mx-auto px-6 py-24 bg-slate-500" 
-        loading="lazy"
-        style={{
-          backgroundImage: `url(${hero})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}>
-          {/* Dark overlay */}
-          {/* <div className="absolute inset-0 bg-black/45"></div> */}
-        <h1 className="text-4xl md:text-6xl font-light text-white mb-6">
-          I build software for people, not systems.
-        </h1>
+      <section
+        id="hero"
+        className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+      >
+        {/* Hero image */}
+        <img
+          src={hero}
+          alt=""
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-        <p className="text-lg md:text-xl text-slate-300 mb-8">
-          Engineer • Builder • DevOps • Embedded Systems
-        </p>
+        {/* Optional overlay */}
+        {/* <div className="absolute inset-0 bg-black/45"></div> */}
 
-        <div className="flex gap-4">
-          <button
-            onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
-            className="px-5 py-2 border border-[#2C2416] hover:border-orange-500 hover:text-orange-500"
-          >
-            View Projects
-          </button>
+        {/* Hero content */}
+        <div className="relative z-10 flex flex-col items-center text-center px-6">
+          <h1 className="text-4xl md:text-6xl font-light text-white mb-6 max-w-4xl">
+            I build software for people,
+          </h1>
+          <h1 className="text-4xl md:text-6xl font-light text-white mb-6 max-w-4xl">
+            not systems.
+          </h1>
 
-          <a
-            href="/cv"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2 border border-[#E8E3DD] hover:border-orange-500 hover:text-orange-500"
-          >
-            View CV
-          </a>
+          <p className="text-lg md:text-xl text-slate-300 mb-8">
+            Engineer • Builder • DevOps • Embedded Systems
+          </p>
+
+          <div className="flex gap-4">
+            <button
+              onClick={() =>
+                document
+                  .getElementById('projects')
+                  ?.scrollIntoView({ behavior: 'smooth' })
+              }
+              className="px-5 py-2 border border-white text-white hover:border-orange-500 hover:text-orange-500 transition"
+            >
+              View Projects
+            </button>
+
+            <a
+              href="/cv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 border border-white text-white hover:border-orange-500 hover:text-orange-500 transition"
+            >
+              View CV
+            </a>
+          </div>
         </div>
       </section>
 
