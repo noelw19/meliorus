@@ -1,7 +1,7 @@
 import './App.css';
 import profile from "./images/selfie.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faHeart, faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { ProjectsGrid } from './components/ProjectsGrid';
 import { ProjectView } from './components/ProjectView';
 import { useEffect, useState } from 'react';
@@ -210,15 +210,12 @@ function Meliorus() {
 
       {/* ABOUT */}
       <section id="about" className="max-w-6xl mx-auto px-6 py-20 border-t border-[#E8E3DD]">
+        <h2 className="text-3xl font-light mb-6">About Me</h2>
         <div className="flex flex-col md:flex-row gap-12">
 
           <img src={profile} className="w-44 h-44 rounded-full border border-[#E8E3DD] object-cover" alt="profile" />
 
           <div className="flex-1">
-            <h2 className="text-2xl mb-6 font-light text-[#2C2416]">
-              About Me
-            </h2>
-
             <p className="text-[#5A5248] font-light leading-relaxed mb-4">
               I grew up in Papua New Guinea before moving to New Zealand for boarding school in 2010.
               Growing up between two very different countries gave me a different perspective on success,
