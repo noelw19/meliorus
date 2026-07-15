@@ -86,7 +86,7 @@ function Meliorus() {
 
     const timer = setTimeout(() => {
       setShowOverlay(true);
-    }, 3000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [heroLoaded]);
