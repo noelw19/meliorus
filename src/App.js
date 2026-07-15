@@ -151,7 +151,7 @@ function Meliorus() {
         {/* <div className="absolute inset-0 bg-black/45"></div> */}
 
         <div
-          className={`absolute inset-0 ${
+          className={`absolute inset-0 transition-opacity duration-[2500ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] ${
             showOverlay ? "opacity-100" : "opacity-0"
           }`}
           style={{
