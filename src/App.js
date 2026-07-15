@@ -76,6 +76,7 @@ function BackToTop() {
 /* ================= MAIN ================= */
 function Meliorus() {
   const [viewInfo, setViewInfo] = useState(null);
+  const [heroLoaded, setHeroLoaded] = useState(false);
   const projects = getAllProjects();
 
   useEffect(() => {
@@ -114,6 +115,13 @@ function Meliorus() {
         id="hero"
         className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
       >
+        {/* Loader */}
+        {!heroLoaded && (
+          <div className="absolute inset-0 z-20 flex items-center justify-center bg-[#FAF8F5]">
+            <div className="w-10 h-10 border-4 border-[#E8E3DD] border-t-[#2C2416] rounded-full animate-spin"></div>
+          </div>
+        )}
+
         {/* Hero image */}
         <img
           src={hero}
@@ -121,19 +129,23 @@ function Meliorus() {
           fetchPriority="high"
           loading="eager"
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover"
+          onLoad={() => setHeroLoaded(true)}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+            heroLoaded ? "opacity-100" : "opacity-0"
+          }`}
         />
 
-        {/* Optional overlay */}
-        {/* <div className="absolute inset-0 bg-black/45"></div> */}
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/45"></div>
 
-        {/* Hero content */}
-        <div className="relative z-10 flex flex-col items-center text-center px-6">
+        {/* Content */}
+        <div
+          className={`relative z-10 flex flex-col items-center text-center px-6 transition-opacity duration-700 ${
+            heroLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <h1 className="text-4xl md:text-6xl font-light text-white mb-6 max-w-4xl">
-            I build software for people,
-          </h1>
-          <h1 className="text-4xl md:text-6xl font-light text-white mb-6 max-w-4xl">
-            not systems.
+            I build software for people, not systems.
           </h1>
 
           <p className="text-lg md:text-xl text-slate-300 mb-8">
@@ -144,8 +156,8 @@ function Meliorus() {
             <button
               onClick={() =>
                 document
-                  .getElementById('projects')
-                  ?.scrollIntoView({ behavior: 'smooth' })
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" })
               }
               className="px-5 py-2 border border-white text-white hover:border-orange-500 hover:text-orange-500 transition"
             >
