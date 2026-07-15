@@ -141,7 +141,9 @@ function Meliorus() {
         {/* <div className="absolute inset-0 bg-black/45"></div> */}
 
         <div
-          className="absolute inset-0"
+          className={`absolute inset-0 ${
+            heroLoaded ? "opacity-100" : "opacity-0"
+          }`}
           style={{
             background: `
               radial-gradient(
