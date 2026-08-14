@@ -7,7 +7,7 @@ import { ProjectView } from './components/ProjectView';
 import { useEffect, useState } from 'react';
 import { getAllProjects, getProjectByIdentifier } from './data/projects';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import cvImage from './images/cv_compressed.jpg';
+import cvImage from './images/cv2026-compressed.jpg';
 import hero from "./images/hero1.jpg"
 
 function App() {
