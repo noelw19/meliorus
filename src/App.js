@@ -12,7 +12,7 @@ import { OutsideTheKeyboard } from './components/OutsideTheKeyboard';
 import { Footer } from './components/Footer';
 import { BackToTop } from './components/BackToTop';
 import { ProjectDetail } from './components/ProjectDetail';
-import cvImage from './images/newcv.jpg';
+import cvImage from './images/newcv.webp';
 import './App.css';
 
 function App() {

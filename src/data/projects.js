@@ -1,8 +1,8 @@
-import alo from "../images/alo_lossy.png";
-import docbot from "../images/docbot.png";
-import pottery from "../images/pottery.png";
-import minotaur from "../images/minotaur_lossy.png";
-import dct from "../images/dct1.png";
+import alo from "../images/alo.webp";
+import docbot from "../images/docbot.webp";
+import pottery from "../images/pottery.webp";
+import minotaur from "../images/minotaur.webp";
+import dct from "../images/dct.webp";
 
 /**
  * Description Content Types

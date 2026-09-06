@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Tent, Waves, Leaf, Wrench } from '@phosphor-icons/react';
-import selfie from '../images/selfie.png';
+import selfie from '../images/selfie.webp';
 
 const items = [
   {
@@ -49,6 +49,8 @@ export function OutsideTheKeyboard() {
             <img
               src={selfie}
               alt="Noel outdoors"
+              loading="lazy"
+              decoding="async"
               style={{
                 width: '100%',
                 height: 'auto',

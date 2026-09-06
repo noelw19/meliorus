@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'motion/react';
 import { ArrowRight } from '@phosphor-icons/react';
-import selfie from '../images/selfie.png';
+import selfie from '../images/selfie.webp';
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
