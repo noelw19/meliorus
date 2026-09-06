@@ -28,7 +28,11 @@ class ProjectFactory {
     link,
     unfinished = false,
     techStack = [],
-    features = []
+    features = [],
+    role = 'Solo',
+    year = 2024,
+    status = 'shipped',
+    featured = false
   }) {
     return {
       id,
@@ -40,7 +44,11 @@ class ProjectFactory {
       link,
       unfinished,
       techStack,
-      features
+      features,
+      role,
+      year,
+      status,
+      featured
     };
   }
 }
@@ -62,7 +70,12 @@ export const projects = [
       }
     ],
     img: alo,
-    link: "https://alo.meliorus.co.nz"
+    link: "https://alo.meliorus.co.nz",
+    role: 'Solo project',
+    year: 2025,
+    status: 'shipped',
+    featured: false,
+    techStack: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'QR codes']
   }),
   ProjectFactory.create({
     id: 5,
@@ -72,7 +85,7 @@ export const projects = [
     description: [
       {
         type: DescriptionTypes.PARAGRAPH,
-        content: "Minotaur is a command-line tool designed to streamline multi-server management and file deployment, built for developers and system administrators who need to manage multiple machines efficiently. Traditional tools like RDM and WinSCP can be slow and cumbersome when handling many servers, requiring repeated logins, file transfers, and context switching. Minotaur solves this by combining SSH access, file copying, and environment management into a single, cohesive workflow."
+        content: "Minotaur is a command-line tool for multi-server management and file deployment, built for developers and system administrators who manage multiple machines. Traditional tools like RDM and WinSCP can be slow and cumbersome when handling many servers, requiring repeated logins, file transfers, and context switching. It combines SSH access, file copying, and environment management into one workflow."
       },
       {
         type: DescriptionTypes.HEADING,
@@ -94,7 +107,12 @@ export const projects = [
       }
     ],
     img: minotaur,
-    link: "https://github.com/noelw19/minotaur"
+    link: "https://github.com/noelw19/minotaur",
+    role: 'Open source tool',
+    year: 2024,
+    status: 'shipped',
+    featured: true,
+    techStack: ['Go', 'tmux', 'SSH', 'JSON config']
   }),
   ProjectFactory.create({
     id: 2,
@@ -108,7 +126,12 @@ export const projects = [
       }
     ],
     img: docbot,
-    link: "https://rag.meliorus.co.nz"
+    link: "https://rag.meliorus.co.nz",
+    role: 'Solo project',
+    year: 2024,
+    status: 'shipped',
+    featured: false,
+    techStack: ['React', 'Python', 'LangChain', 'Pinecone', 'FastAPI']
   }),
   ProjectFactory.create({
     id: 3,
@@ -122,7 +145,12 @@ export const projects = [
       }
     ],
     img: dct,
-    link: "https://dct.meliorus.co.nz"
+    link: "https://dct.meliorus.co.nz",
+    role: 'Solo project',
+    year: 2023,
+    status: 'shipped',
+    featured: false,
+    techStack: ['React', 'WebAssembly', 'Go', 'WASM', 'crypto']
   }),
   ProjectFactory.create({
     id: 4,
@@ -136,7 +164,12 @@ export const projects = [
       }
     ],
     img: pottery,
-    link: "https://github.com/noelw19/Pottery"
+    link: "https://github.com/noelw19/Pottery",
+    role: 'Open source',
+    year: 2023,
+    status: 'archived',
+    featured: false,
+    techStack: ['Go', 'Docker', 'gRPC', 'MTLS']
   })
 ];
 

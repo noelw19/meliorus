@@ -7,7 +7,9 @@
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@phosphor-icons/react": "^2.1.10",
     "cra-template": "1.2.0",
+    "motion": "^13.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.15.0",
@@ -38,9 +40,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "",
     "daisyui": "^4.12.24",
     "tailwindcss": "^3.4.17",
-    "web-vitals": "^4.2.4",
-    "@babel/plugin-proposal-private-property-in-object": ""
+    "web-vitals": "^4.2.4"
   }
 }
