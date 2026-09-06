@@ -53,7 +53,7 @@ export function Footer() {
 
           {/* Email */}
           <a
-            href="mailto:noel@meliorus.co.nz"
+            href="mailto:noelw19@outlook.com"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -69,7 +69,7 @@ export function Footer() {
             onMouseLeave={(e) => (e.currentTarget.style.color = '#2E5D3A')}
           >
             <Envelope size={20} />
-            noel@meliorus.co.nz
+            noelw19@outlook.com
           </a>
 
           {/* Social links */}
