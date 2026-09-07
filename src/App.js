@@ -11,6 +11,7 @@ import { Principles } from './components/Principles';
 import { OutsideTheKeyboard } from './components/OutsideTheKeyboard';
 import { Footer } from './components/Footer';
 import { BackToTop } from './components/BackToTop';
+import { DonateButton } from './components/DonateButton';
 import { ProjectDetail } from './components/ProjectDetail';
 import cvImage from './images/newcv.webp';
 import './App.css';
@@ -65,6 +66,7 @@ function MainPage() {
       <OutsideTheKeyboard />
       <Footer />
       <BackToTop />
+      <DonateButton />
     </div>
   );
 }
